@@ -77,7 +77,9 @@ def get_weather(location):
     total_temp = 0
     for a in air_temp_response["items"][0]["readings"]:
         total_temp += a["value"]
-    average_temp = total_temp / len(air_temp_response["items"][0]["readings"])
+    average_temp = round(
+        total_temp / len(air_temp_response["items"][0]["readings"]), 2
+    )
 
     weather_info = {
         "info": "2 hour weather forecast in Singapore",
