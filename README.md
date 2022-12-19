@@ -1,6 +1,6 @@
 # Your Personal Assistant 🦸
 Create your own personal assistant that can do the following:
-- [ ] Check the weather
+- [x] Check the weather
 - [ ] Check the share price
 - [ ] Bus arrival time
 - and many more.. 
