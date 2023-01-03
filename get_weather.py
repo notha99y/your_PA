@@ -29,19 +29,31 @@ def get_distance(lat1, lat2, lon1, lon2):
 
 
 def get_ip():
-    response = requests.get("https://api64.ipify.org?format=json").json()
+    try:
+        response = requests.get("https://api64.ipify.org?format=json").json()
+    except Exception as e:
+        print("failed to get current ip")
+        print(e)
+        return
+
     return response["ip"]
 
 
 def get_location():
     ip_address = get_ip()
-    with urllib.request.urlopen(
-        f"https://geolocation-db.com/jsonp/{ip_address}"
-    ) as url:
-        data = url.read().decode()
-        location_info = data.split("(")[1].strip(")")
+    try:
+        with urllib.request.urlopen(
+            f"https://geolocation-db.com/jsonp/{ip_address}"
+        ) as url:
+            data = url.read().decode()
+            location_info = data.split("(")[1].strip(")")
 
-    location_info = location_info.replace("null", "None")
+        location_info = location_info.replace("null", "None")
+    except Exception as e:
+        print("failed to get current location")
+        print(e)
+        return
+
     return eval(location_info)
 
 
@@ -53,8 +65,19 @@ def get_weather(location):
         "https://api.data.gov.sg/v1/environment/2-hour-weather-forecast"
     )
     air_temp_api_url = "https://api.data.gov.sg/v1/environment/air-temperature"
-    forcast_response = requests.get(forcast_api_url).json()
-    air_temp_response = requests.get(air_temp_api_url).json()
+
+    try:
+        forcast_response = requests.get(forcast_api_url).json()
+    except Exception as e:
+        print("failed to get weather forecast")
+        print(e)
+        return
+    try:
+        air_temp_response = requests.get(air_temp_api_url).json()
+    except Exception as e:
+        print("failed to get air temp")
+        print(e)
+        return
 
     area_metadata = forcast_response["area_metadata"]
     closest_distance = 100  # km
