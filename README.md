@@ -21,5 +21,4 @@ You speak to your PA through voice commands and he/she would be able to response
 <img align="left" alt="Pytorch Lightning" width="26px" src="https://avatars.githubusercontent.com/u/58386951?s=200&v=4"/>
 <img align="left" alt="Hugging Face" width="26px" src="https://avatars.githubusercontent.com/u/25720743?s=200&v=4"/>
 <img align="left" alt="Docker" width="26px" src="https://avatars.githubusercontent.com/u/5429470?s=200&v=4"/>
-<img align="left" alt="Nvidia" width="26px" src="https://avatars.githubusercontent.com/u/1728152?s=200&v=4
-"/>
+<img align="left" alt="Nvidia" width="26px" src="https://avatars.githubusercontent.com/u/1728152?s=200&v=4"/>
